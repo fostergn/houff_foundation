@@ -1,0 +1,38 @@
+<main class="negative-hours">
+		<article>
+			do you have skills? would you like to be hired or volunteer to work on other artist's projects? fill out the form below to become a part of our temp work directory. your information will be private, but artists will be able to find you based on the skills you list.
+		</article>
+		<section>
+			<input id="temp-name" ng-model="tempApply.formData.name" name="name" placeholder="name">
+			<input id="temp-email" ng-model="tempApply.formData.email" name="email" placeholder="email">
+			<input id="temp-phone" ng-model="tempApply.formData.phone" name="phone" placeholder="phone">
+			<select id="temp-department" ng-model="tempApply.formData.department" class="department">
+				<option selected="true" style="padding-left:1em;display:none;">department</option>
+				<option value="art-education">Art Education</option>
+				<option value="art-history">Art History</option>
+				<option value="cinema">Cinema</option>
+				<option value="commarts">Comm. Arts</option>
+				<option value="craft">Craft/Material Studies</option>
+				<option value="dance">Dance & Choreography</option>
+				<option value="fashion">Fashion</option>
+				<option value="gdes">Graphic Design</option>
+				<option value="interior">Interior Design</option>
+				<option value="ki">Kinetic Imaging</option>
+				<option value="papr">Painting & Printmaking</option>
+				<option value="photofilm">Photo & Film</option>
+				<option value="sculpture">Sculpture</option>
+				<option value="theatre">Theatre</option>
+			</select>
+			<div class="skill">
+				<input class="temp-skill" ng-model="tempApply.formData.skill[0].name" name="skill" placeholder="skill">
+				<div class="line"></div>
+				<input class="temp-hr" ng-model="tempApply.formData.skill[0].perHour" name="$/hr" placeholder="$/hr">
+				<div ng-click="tempApply.removeSkill($event)" class="remove-skill">x</div>
+			</div>
+			<p ng-click="tempApply.addSkill($event)" class="add-skill">+ add skill</p>
+			<textarea id="temp-bio" name="temp-bio" ng-model="tempApply.formData.bio" placeholder="tell us a little about yourself (100 words or less)"></textarea>
+			<input id="nhg-images" ngf-select ng-model="tempApply.file" type="button" value="selfie +">
+			<input class="submit" ng-click="tempApply.submitWorker()" id="nhg-submit" type="button" value="submit">
+			<p ng-if="tempApply.file" class="image-info">{{tempApply.file.name}} <br> {{tempApply.file.size | bytes}}</p>
+		</section>
+	</main>

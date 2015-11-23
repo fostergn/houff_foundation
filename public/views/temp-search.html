@@ -1,0 +1,61 @@
+<main class="temp-search">
+		<div class="filters">
+			<input ng-model="searchWorkers" placeholder="search">
+			<ul ng-if="!search.skills" class="search-skills">
+				<li >loading tags...</li>
+			</ul>
+			<ul class="search-skills">
+				<li ng-click="search.filterSkill($event, skill._id)" ng-repeat="skill in search.skills">{{skill._id}} ({{skill.total}})</li>
+			</ul>
+			<select ng-model="searching.department" class="department">
+				<option selected="true" value="" style="display:none;">department</option>
+				<option value="">all</option>
+				<option value="art-education">Art Education</option>
+				<option value="art-history">Art History</kioption>
+				<option value="cinema">Cinema</option>
+				<option value="commarts">Comm. Arts</option>
+				<option value="craft">Craft/Material Studies</option>
+				<option value="dance">Dance & Choreography</option>
+				<option value="fashion">Fashion</option>
+				<option value="gdes">Graphic Design</option>
+				<option value="interior">Interior Design</option>
+				<option value="ki">Kinetic Imaging</option>
+				<option value="papr">Painting & Printmaking</option>
+				<option value="photofilm">Photo & Film</option>
+				<option value="sculpture">Sculpture</option>
+				<option value="theatre">Theatre</option>
+			</select>
+			<div ng-click="search.generalRequest()" class="general-request">general request</div>
+		</div>
+		<article ng-if="!search.workers.length" class="temp-worker">
+			<div class="temp-worker-img">
+				<img src="img/workers/gavin.png">
+			</div>
+			<div class="temp-worker-info">
+				<h3><span class="req-worker-name">Gavin Foster</span></h3>
+				<p>
+						Available workers are loading...
+				</p>
+			</div>
+		</article>
+		<article class="temp-worker" ng-repeat="worker in filtered = (search.workers | filter:searchWorkers |filter:searching | filter:search.searchSkill)">
+			<div class="temp-worker-img">
+				<img src="img/workers/{{worker.image}}">
+			</div>
+			<div class="temp-worker-info">
+				<h3><span class="req-worker-name">{{worker.name}}</span></h3>
+				<p>
+					<span ng-repeat="skill in worker.skills">
+						{{skill.name}}
+				  </span>
+				</p>
+				<p style="display:none">{{worker.department}}</p>
+				<p ng-click="search.requestWorker(worker)" class="request"><span>request</span></p>
+			</div>
+		</article>
+		<div ng-show="filtered.length === 0 && search.workers.length" class="temp-worker-info">
+				<p>
+					Sorry, we do not have any workers that fit your current filter parameters.
+				</p>
+			</div>
+	</main>

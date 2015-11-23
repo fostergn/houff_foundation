@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>The Houff Foundation</title>
+	<link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAA9ffuAAMFEwD5+fkAfo//AAADGQD2/PkAfnEIACZ7ngD5/vwA+/78APz+/AD6+/QANSsKAH9wAwB5dgMA9fX1APX/+gD9/PoAHBQCAB4UGwD48/sAfZH7AHh0AQCHlecAepD+AHyQ/gDY1dUAeW4KADxCaABulfEAFF52AGVtDgANDgQAf5L5AHyR/AAGDBsA9/35ACl5pgCAcAUAdmUUAH6Y8QDe3t4Ag4bRAG+M8wAbZY0A+v73APn38gAmhqwABwYMAA8ZKQA4g5sAOTk5AHyS+wB6aQoA9v74ANLV2AB5lfMAAQoKAHt3BAD5/fsA+fz+AHia9gD7/P4AepL8AHyS/ACLjY0ABgELAPr7+QD6//YA+f75APz09AAIAw4AYF9jAPv9/ABRU1QAExUuACNihwB6cgMAG4OvACV/oQB9cgMA+/z3AIGQ8gAPBgYAeJT4AAQEBAAOgrMA8/bwAHiQ8wD4+fgAjJbZAI2P1AB9bgcABg8PADgwCwB2axAAuLm3APX39gD6/vsAi5HwAA8nNwAxMwMAXWAoAPv++wB8kfkAc3MCAA9wnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoKCgoKCgoKCgo4Ky9QFAMKCgoKCgoKCmNcOSJbJkc0CgoKCgoKCkZLLB5BQRgEEAoKCgoKCgoSPlNMGkE1WSoKCgoKCgoKRWQkVSNBKR1WCgoKCgoKCi4yFhlAaQUVWmhhPAoKCgk6VwhDMQw9CgohTmcKCkoCT01YCgoKCgoKDxMgYgpIax83CgoKCgoKCgFfJzsoXjMlCgoKCgoKCgoKPwdRDhdCCgoKCgoKCgoKCgpUMBxgCwoKCgoKCgoKCgoKEWUtXWobUgoKCgoKCgoKCgoKBg02ZklECgoKCgoKAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAA=" rel="icon" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<base href="/">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.js"></script>
+	<script src="assets/js/ng-file-upload-shim.js"></script>
+	<script src="assets/js/ng-file-upload.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-route.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/services/workers.js"></script>
+	<script src="js/services/grants.js"></script>
+	<script src="js/services/requests.js"></script>
+</head>
+<body ng-app="houffApp" ng-controller="mainController as main">
+	<h1 ng-class="{'highlight': main.section == 'home'}" ng-click="main.go('home', '/home')">The Houff Foundation</h1>
+	<nav>
+		<ul>
+			<li ng-class="{'highlight': main.section == 'board'}" ng-click="main.go('board', '/board')">board</li>
+			<li ng-class="{'highlight': main.section == 'apply'}" ng-click="main.go('apply', '/apply')">apply</li>
+			<li ng-class="{'highlight': main.section == 'resources'}" ng-click="main.go('resources', '/resources')">resources</li>
+			<li ng-class="{'highlight': main.section == 'projects'}" ng-click="main.go('projects', '/projects')">projects</li>
+			
+		</ul>
+	</nav>
+	<div ng-view autoscroll="true"></div>
+</body>
+</html>

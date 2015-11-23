@@ -1,0 +1,35 @@
+<main class="negative-hours">
+		<article>
+			help is hard to find, and harder to afford. Apply for a labor grant: up to 25- hours of an extra set of skilled hands in various 2 and 3 dimensional tasks, as well as first aid, and administrative work. <br><br>
+
+			All applicants must be enrolled in the VCU School of the Arts. Graduate and Undergraduates are encouraged to apply (now). 
+		</article>
+		<section>
+			<input id="nhg-name" ng-model="negative.formData.name" name="name" placeholder="name">
+			<input id="nhg-email" ng-model="negative.formData.email" name="email" placeholder="email">
+			<input id="nhg-phone" ng-model="negative.formData.phone" name="phone" placeholder="phone">
+			<select id="nhg-department" ng-model="negative.formData.department" class="department">
+				<option selected="true" style="padding-left:1em;display:none;">department</option>
+				<option value="art-education">Art Education</option>
+				<option value="art-history">Art History</option>
+				<option value="cinema">Cinema</option>
+				<option value="commarts">Comm. Arts</option>
+				<option value="craft">Craft/Material Studies</option>
+				<option value="dance">Dance & Choreography</option>
+				<option value="fashion">Fashion</option>
+				<option value="gdes">Graphic Design</option>
+				<option value="interior">Interior Design</option>
+				<option value="ki">Kinetic Imaging</option>
+				<option value="papr">Painting & Printmaking</option>
+				<option value="photofilm">Photo & Film</option>
+				<option value="sculpture">Sculpture</option>
+				<option value="theatre">Theatre</option>
+			</select>
+			<textarea id="nhg-summary" ng-model="negative.formData.summary" name="nhg-summary" placeholder="summary of project (200 words)"></textarea>
+			<textarea id="nhg-time" name="nhg-time" ng-model="negative.formData.timeline" placeholder="specific use of labor and time (100 words)"></textarea>
+			<p id="nhg-image-info">please upload max of 4 images (.jpg | .png) that together are less than 10MB</p>
+			<input id="nhg-images" name="file" ngf-select ng-model="negative.files" ngf-multiple="true" type="button" value="images +">
+			<input class="submit" id="nhg-submit" ng-click="negative.submitApplication()" type="button" value="submit">
+			<p ng-repeat="file in negative.files">{{file.name}} | {{file.size | bytes}}</p>
+		</section>
+	</main>

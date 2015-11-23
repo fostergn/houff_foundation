@@ -1,0 +1,41 @@
+<main class="temp-request">
+		<section class="req-description">fill out the form provided below. this will help us match you with your potential skilled worker to help complete your project. please fill out the form as accurately as possible in order to best help us make the right match. this will also help clearly communicate your desires to your matched worker and make the entire process more enjoyable. you will get an email confirmation and we will get back to you within the next 24 hours.</section>
+		<section class="req-form">
+			<input id="temp-name" ng-model="request.formData.name" name="name" placeholder="name">
+			<input id="temp-email" ng-model="request.formData.email" name="email" placeholder="email">
+			<input id="temp-phone" ng-model="request.formData.phone" name="phone" placeholder="phone">
+			<select id="temp-department" ng-model="request.formData.department" class="department">
+				<option selected="true" style="padding-left:1em;display:none;">department</option>
+				<option value="art-education">Art Education</option>
+				<option value="art-history">Art History</option>
+				<option value="cinema">Cinema</option>
+				<option value="commarts">Comm. Arts</option>
+				<option value="craft">Craft/Material Studies</option>
+				<option value="dance">Dance & Choreography</option>
+				<option value="fashion">Fashion</option>
+				<option value="gdes">Graphic Design</option>
+				<option value="interior">Interior Design</option>
+				<option value="ki">Kinetic Imaging</option>
+				<option value="papr">Painting & Printmaking</option>
+				<option value="photofilm">Photo & Film</option>
+				<option value="sculpture">Sculpture</option>
+				<option value="theatre">Theatre</option>
+			</select>
+			<input id="req-hours" ng-model="request.formData.numHours" class="req-input"  placeholder="# of hours">
+			<input id="req-pay" ng-model="request.formData.perHour" class="req-input"  placeholder="$/hr">
+			<textarea id="temp-bio" ng-model="request.formData.description" name="temp-bio" placeholder="description of the project and work required to complete it (max 100 words)"></textarea>
+			<div ng-click="request.submitRequest()" class="req-submit submit">submit request</div>
+		</section>
+		<article class="req-worker">
+			<div class="req-worker-img">
+				<img ng-src="img/workers/{{request.worker.image}}">
+			</div>
+			<div class="req-worker-info">
+				<h3><span class="req-worker-name">{{request.worker.name}}</span></h3>
+				<ul>
+					<li ng-repeat="skill in request.worker.skills">{{skill.name}}</li>
+				</ul>
+			</div>
+		</article>
+		
+	</main>
