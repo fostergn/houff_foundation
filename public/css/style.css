@@ -846,7 +846,9 @@ textarea {
     top:50%;
     left:50%;
     pointer-events:none;
-    transform: translate(-50%, -60%) rotate(90deg);
+    transform: translate(-50%, -50%) rotate(90deg);
+    width:30%;
+    text-align:center;
   }
 
   #mobile-menu div, #mobile-menu li, #mobile-menu h2 {
