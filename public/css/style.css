@@ -95,6 +95,7 @@ h1 {
 	background-color:white;
 	z-index:10;
 	cursor:pointer;
+	text-align:center;
 }
 
 nav li {
@@ -125,6 +126,10 @@ nav li:nth-child(3), nav li:nth-child(4) {
 .highlight {
 	background-color:#3249BA;
 	color:#fff !important;
+}
+
+#mobile-menu, .mobile-overlay {
+	display:none;
 }
 
 /***********************************
@@ -810,4 +815,222 @@ textarea {
 	position:relative;
 	bottom:4px;
 	font-size:.8em;
+}
+
+/***********************************
+*
+*	MEDIA QUERIES
+*
+************************************/
+
+@media (max-width: 700px) {
+
+	h1 {
+		top:0;
+		width:100%;
+	}
+
+	#large-menu {
+		display:none;
+	}
+
+  #mobile-menu {
+    display: block;
+    position:fixed;
+    z-index:20;
+    height:100vw;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  #mobile-menu h2 {
+  	font-size:1.8em;
+  	bottom: 2%;
+  	position:relative;
+  }
+
+  #mobile-menu ul {
+  	display:none;
+  }
+
+  #mobile-menu li {
+	font-size:2.5em;
+	position:fixed;
+	padding: 0px 6px 6px;
+	cursor:pointer;
+	z-index:10;
+	}
+
+	#mobile-menu li:nth-child(odd) {
+		text-align:center;
+		right:15vh;
+	}
+
+	#mobile-menu li:nth-child(even) {
+		left:15vh;
+	}
+
+	#mobile-menu li:nth-child(1), nav li:nth-child(2) {
+	  top: 30vw;
+	}
+
+	#mobile-menu li:nth-child(3), nav li:nth-child(4) {
+	  bottom: 30vw;
+	}
+
+	.mobile-overlay {
+		display:none;
+		position:fixed;
+		z-index:5;
+		background-color:rgba(255,255,255,.8);
+		width:100vw;
+		height:100vh;
+	}
+
+	/*******************************
+	*
+	* HOME
+	*
+	********************************/
+
+	.home {
+		padding: 0em 0em;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+	}
+
+	.home-image {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+  }
+
+  .home-description {
+  	width:100%;
+  }
+
+  .home-description p {
+  	width: 85%;
+    margin: 1em auto;
+  }
+
+  /*******************************
+	*
+	* APPLY
+	*
+	********************************/
+
+	.apply {
+		margin-top:5em;
+		padding:0 1em;
+	}
+
+	.grant-heading h2 {
+		font-size:8vw;
+		line-height:1em;
+	}
+
+	/*******************************
+	*
+	* BOARD
+	*
+	********************************/
+	.board {
+		padding:0;
+		margin-top:0;
+	}
+
+	.board article {
+		display: block;
+    width: 90%;
+    margin: 4em auto 0em;
+	}
+
+	.board-img {
+		display:block;
+		width:100%;
+	}
+
+	.board-img img {
+		width:100%;
+	}
+
+	.board aside {
+		width:90%;
+		margin:0 auto;
+	}
+
+	.job-title {
+		bottom: 0px;
+    font-size: .8em;
+    display: block;
+    padding-top: 1em;
+	}
+
+	/*******************************
+	*
+	* PROJECTS
+	*
+	********************************/
+
+	.projects {
+		padding:4em 0 0 0;
+		width:90%;
+		margin:0 auto;
+
+	}
+
+	.projects article {
+		display:block;
+	}
+
+	.projects article img {
+		width:100%;
+	}
+
+	.projects aside {
+		width:100%;
+		font-size:1.5em;
+		margin-top:.5em;
+	}
+
+	/*******************************
+	*
+	* RESOURCES
+	*
+	********************************/
+	.resources {
+		padding:0;
+	}
+
+	.resources-gifs {
+		display:block;
+		width:100%;
+		text-align:center;
+	}
+
+	.resources-gifs img {
+		width:32%;
+		display:inline-block;
+	}
+
+	.skills {
+		width:0%;
+		height:100%;
+	}
+
+	.skills ul {
+		height:0;
+	}
+
+	.skills ul li {
+		display:inline-block;
+		position:relative;
+	}
+
+	.resources-description {
+		display:none;
+	}
 }
