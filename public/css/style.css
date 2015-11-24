@@ -845,7 +845,12 @@ textarea {
     height:100vw;
     top:50%;
     left:50%;
-    transform: translate(-50%, -50%) rotate(90deg);
+    pointer-events:none;
+    transform: translate(-50%, -60%) rotate(90deg);
+  }
+
+  #mobile-menu div, #mobile-menu li, #mobile-menu h2 {
+  	pointer-events:all;
   }
 
   #mobile-menu h2 {
@@ -1037,5 +1042,108 @@ textarea {
 		display:none;
 	}
 
+	/*******************************
+	*
+	* NEGATIVE HOURS
+	*
+	********************************/
+	.negative-hours {
+		padding:0;
+	}
 
+	#nhg-phone {
+		width:100%;
+	}
+
+	#nhg-department {
+		width:100%;
+		margin-bottom:1em;
+	}
+
+	#nhg-image-info {
+    width: 100%;
+  }
+
+  #nhg-images {
+  	width:100%;
+  }
+
+  #nhg-submit {
+  	width:100%;
+  }
+
+  /*******************************
+	*
+	* TEMP APPLY OR SEARCH?
+	*
+	********************************/
+
+	.temp {
+		padding:0;
+		width:100%;
+		margin:0 auto;
+		margin-top:2em;
+	}
+
+	.temp section {
+		margin:0;
+		margin-bottom: 1em;
+		position:relative;
+	}
+
+	.temp-heading-apply {
+		border:none;
+		font-size: .8em;
+	}
+
+	.temp-heading-search {
+		border:none;
+		font-size: .8em;
+	}
+
+	.temp-search {
+		margin: 0em auto;
+	}
+
+	.temp-button {
+		margin-top:0em;
+	}
+
+	.temp section div {
+		padding-top:0;
+	}
+
+	/*******************************
+	*
+	* TEMP APPLY
+	*
+	********************************/
+
+	#temp-phone {
+		width:100%;
+	}
+
+	#temp-department {
+		width:100%;
+		margin-bottom:1em;
+	}
+
+	/*******************************
+	*
+	* TEMP SEARCH
+	*
+	********************************/
+
+	.temp-search {
+		padding:0;
+		margin-top:2em;
+	}
+
+	.filters {
+		display:none;
+	}
+
+	.temp-search article {
+		width:100%;
+	}
 }

@@ -28,7 +28,7 @@
 		</ul>
 	</nav>
 	<nav id="mobile-menu">
-		<h2 ng-click="main.toggleMenu()">menu</h2>
+		<h2 ng-click="main.toggleMenu()">{{main.menuState}}</h2>
 		<ul ng-show="main.menu">
 			<li ng-class="{'highlight': main.section == 'board'}" ng-click="main.go('board', '/board')">board</li>
 			<li ng-class="{'highlight': main.section == 'apply'}" ng-click="main.go('apply', '/apply')">apply</li>

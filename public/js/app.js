@@ -102,6 +102,7 @@ app.controller('mainController', function($location){
 	vm.section = "";
 
 	vm.menu = false;
+	vm.menuState = 'menu';
 
 	switch ($location.path()){
 		case '/':
@@ -129,6 +130,11 @@ app.controller('mainController', function($location){
 		vm.toggleMenu = function(){
 		console.log('before: ', vm.menu);
 		vm.menu = !vm.menu;
+		if(vm.menu){
+			vm.menuState = "close";
+		} else {
+			vm.menuState = "menu";
+		}
 		console.log('after: ', vm.menu);
 	}
 
