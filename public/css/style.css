@@ -60,6 +60,10 @@ body {
     display: none; 
 }
 
+input {
+	border-radius:0;
+}
+
 /***********************************
 *
 *	FONTS
