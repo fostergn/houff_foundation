@@ -132,6 +132,10 @@ nav li:nth-child(3), nav li:nth-child(4) {
 	/*display:none;*/
 }
 
+#mobile-menu {
+	display:none;
+}
+
 /***********************************
 *
 *	MAIN
