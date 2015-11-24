@@ -28,8 +28,8 @@
 		</ul>
 	</nav>
 	<nav id="mobile-menu">
-		<h2>menu</h2>
-		<ul>
+		<h2 ng-click="main.toggleMenu()">menu</h2>
+		<ul ng-show="main.menu">
 			<li ng-class="{'highlight': main.section == 'board'}" ng-click="main.go('board', '/board')">board</li>
 			<li ng-class="{'highlight': main.section == 'apply'}" ng-click="main.go('apply', '/apply')">apply</li>
 			<li ng-class="{'highlight': main.section == 'resources'}" ng-click="main.go('resources', '/resources')">resources</li>
@@ -37,7 +37,7 @@
 			
 		</ul>
 	</nav>
-	<div class="mobile-overlay"></div>
+	<div ng-show="main.menu" class="mobile-overlay"></div>
 
 	<div ng-view autoscroll="true"></div>
 </body>

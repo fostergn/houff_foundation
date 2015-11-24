@@ -101,6 +101,8 @@ app.controller('mainController', function($location){
 	var vm = this;
 	vm.section = "";
 
+	vm.menu = false;
+
 	switch ($location.path()){
 		case '/':
 			vm.section = 'home';
@@ -122,6 +124,12 @@ app.controller('mainController', function($location){
 	vm.go = function(section, link){
 		vm.section = section;
 		$location.path(link);
+	}
+
+		vm.toggleMenu = function(){
+		console.log('before: ', vm.menu);
+		vm.menu = !vm.menu;
+		console.log('after: ', vm.menu);
 	}
 
 });
@@ -183,7 +191,7 @@ app.controller('tempApplyController', function(Workers, $compile, $scope, Upload
             	'skill': vm.formData.skill
             }
         });
-
+        Success.message = "Thank you for signing up to be in our temp agency directory! We will contact you shortly to confirm information and look forward to working with you in the future."
         $location.path('/success');
 	}
 

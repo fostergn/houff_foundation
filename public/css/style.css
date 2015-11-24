@@ -129,7 +129,7 @@ nav li:nth-child(3), nav li:nth-child(4) {
 }
 
 #mobile-menu, .mobile-overlay {
-	display:none;
+	/*display:none;*/
 }
 
 /***********************************
@@ -851,7 +851,7 @@ textarea {
   }
 
   #mobile-menu ul {
-  	display:none;
+  	/*display:none;*/
   }
 
   #mobile-menu li {
@@ -880,7 +880,6 @@ textarea {
 	}
 
 	.mobile-overlay {
-		display:none;
 		position:fixed;
 		z-index:5;
 		background-color:rgba(255,255,255,.8);
@@ -1033,4 +1032,6 @@ textarea {
 	.resources-description {
 		display:none;
 	}
+
+
 }
